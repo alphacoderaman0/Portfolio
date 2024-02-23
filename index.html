@@ -9,6 +9,26 @@
 			padding: 0;
 		}
 	</style>
+	
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("ih_2401eE5ScX82RN");
+        })();
+    </script>
+    <script type="text/javascript">
+        function sendMail(){
+            var params = {
+            from_name: document.getElementById("fullname").value,
+            email_id: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        };
+        emailjs.send("service_6st6u22","template_lgd15wg",params).then(function(res){
+            alert("email sent successfully!");
+        })
+        }
+    </script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -809,21 +829,21 @@
 									<div class="col-md-6 order-md-last d-flex">
 										<form action="#" class="bg-light p-4 p-md-5 contact-form" id="contact-form">
 											<div class="form-group">
-												<input type="text" class="form-control" placeholder="Your Name">
+												<input id="fullname" type="text" class="form-control" placeholder="Your Name" required>
 											</div>
 											<div class="form-group">
-												<input type="text" class="form-control" placeholder="Your Email">
+												<input	id="email" type="text" class="form-control" placeholder="Your Email" required>
 											</div>
 											<div class="form-group">
-												<input type="text" class="form-control" placeholder="Subject">
+												<input type="text" class="form-control"  id="subject" placeholder="Subject">
 											</div>
 											<div class="form-group">
-												<textarea name="" id="" cols="30" rows="7" class="form-control"
-													placeholder="Message"></textarea>
+												<textarea name="" id="message" cols="30" rows="7" class="form-control"
+													placeholder="Message" required></textarea>
 											</div>
 											<div class="form-group">
-												<input type="submit" value="Send Message"
-													class="btn btn-primary py-3 px-5">
+												<input value="Send Message"
+													class="btn btn-primary py-3 px-5" onclick="sendMail();">
 											</div>
 										</form>
 									</div>
@@ -912,7 +932,7 @@
 									stroke-miterlimit="10" stroke="#F96D00" />
 							</svg></div>
 
-
+						<!-- <script src="js/email.js"></script> -->
 						<script src="js/jquery.min.js"></script>
 						<script src="js/jquery-migrate-3.0.1.min.js"></script>
 						<script src="js/popper.min.js"></script>
