@@ -1,0 +1,22 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+img{
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 45%;
+    height: 10%;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+}
+img:hover{
+    opacity: 0.5px;
+}
+.certi{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:center;
+    gap: 40px;
+
+}
